@@ -1,14 +1,26 @@
 import React, {Component} from 'react';
 import css from './controller.module.scss';
+import {connect} from "react-redux";
+import {fieldReducer} from "../../models/FieldReducerModel";
 
-class Controller extends Component {
+
+interface IProps {
+    currentStep: string;
+}
+class Controller extends Component <IProps,{}> {
     render() {
         return (
             <div className={css.controller}>
-                Текущий ход: крестик
+                Текущий ход: {this.props.currentStep}
             </div>
         );
     }
 }
 
-export default Controller;
+const mapStateToProps = (state: fieldReducer)=>{
+    return{
+        currentStep: state.currentStep
+    }
+};
+
+export default connect(mapStateToProps)(Controller);

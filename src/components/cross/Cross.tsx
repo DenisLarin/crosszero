@@ -3,7 +3,7 @@ import cross from './../../assets/cross.svg';
 
 const Cross = () => {
     return (
-        <img style={{width: "100%", height: "100%"}} src={cross} alt=""/>
+        <img style={{width: "calc(100% - 2px)", height: "calc(100% - 2px)"}} src={cross} alt=""/>
     );
 };
 

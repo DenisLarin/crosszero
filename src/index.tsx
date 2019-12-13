@@ -8,7 +8,7 @@ import {Provider} from 'react-redux';
 import {createStore} from "redux";
 import fieldReducer from './store/reducers/fieldReducer'
 
-const store = createStore(fieldReducer, (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__());
+const store = createStore(fieldReducer as any, (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__());
 
 const app = (
     <Provider store={store}>
